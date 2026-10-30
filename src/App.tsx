@@ -54,7 +54,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-(--sb-page) bg-[linear-gradient(120deg,var(--sb-sheen),transparent_55%)] font-sans text-(--sb-text) transition-colors duration-300">
-      <Sidebar user={{ name: 'Ananya Sharma', role: 'Admin' }} groups={groups} actions={actions} />
+      <Sidebar user={{ name: 'Luis Curbata', role: 'Admin' }} groups={groups} actions={actions} />
 
       {/* Lienzo en blanco: en escritorio deja 132px a la izquierda (24 + 84 + 24) */}
       <main className="min-h-screen pt-20 md:pt-0 md:pl-[132px]" />
