@@ -1,4 +1,13 @@
-import type { LucideIcon } from 'lucide-react'
+import type { ComponentType } from 'react'
+
+/**
+ * Cualquier componente de ícono que acepte className (lucide-react, react-icons, SVG propios...).
+ */
+export type SidebarIcon = ComponentType<{
+  className?: string
+  strokeWidth?: number | string
+  'aria-hidden'?: boolean | 'true' | 'false'
+}>
 
 export interface SidebarUser {
   name: string
@@ -10,10 +19,13 @@ export interface SidebarUser {
 export interface SidebarNavItem {
   id: string
   label: string
-  icon: LucideIcon
+  icon: SidebarIcon
   /** Contador/etiqueta que aparece como "badge" azul. */
   badge?: number | string
-  /** Si se define, el item se renderiza como <a>. */
+  /**
+   * Destino del ítem. Se renderiza como <a href>, o con `linkComponent` (p. ej. el `Link` de
+   * react-router) como <Link to>. Sin `href` el ítem es un <button>.
+   */
   href?: string
 }
 
@@ -26,6 +38,10 @@ export interface SidebarNavGroup {
 export interface SidebarAction {
   id: string
   label: string
-  icon: LucideIcon
+  icon: SidebarIcon
   onClick?: () => void
+  /** Si se define, la acción es un enlace <a>. Los http(s) se abren en pestaña nueva. */
+  href?: string
+  /** Con `href`: descarga el archivo (true o nombre del archivo). */
+  download?: boolean | string
 }

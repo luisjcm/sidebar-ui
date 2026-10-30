@@ -1,7 +1,7 @@
 {
   "name": "sidebar-ui",
   "private": true,
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Sidebar colapsable (React + Tailwind v4) con tema claro/oscuro, IBM Plex y menú móvil",
   "license": "MIT",
   "type": "module",
