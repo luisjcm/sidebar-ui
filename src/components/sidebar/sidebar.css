@@ -1,0 +1,60 @@
+/*
+ * Sidebar · tokens de diseño + variante `sb-open`.
+ * Se importa desde index.css (después de `@import 'tailwindcss'`).
+ *
+ * Tema: cualquier ancestro con data-theme="dark" activa la paleta oscura.
+ * Para adaptarlo a tu portafolio basta con cambiar los valores de estas variables.
+ */
+
+:root,
+[data-theme='light'] {
+  --sb-page: #e8ecf1;
+  --sb-surface: #ffffff;
+  --sb-text: #3d434b;
+  --sb-soft: #6e747d;
+  --sb-muted: #a8adb5;
+  --sb-border: #eef0f3;
+  --sb-chip: #f4f5f7;
+  --sb-accent: #007aff;
+  --sb-active: rgb(0 122 255 / 10%);
+  --sb-sheen: rgb(255 255 255 / 45%);
+  --sb-shadow: 0 24px 60px rgb(31 41 55 / 12%);
+  --sb-ring: rgb(0 122 255 / 45%);
+}
+
+[data-theme='dark'] {
+  --sb-page: #060709;
+  --sb-surface: #14161a;
+  --sb-text: #e6e8eb;
+  --sb-soft: #8f959e;
+  --sb-muted: #5f656e;
+  --sb-border: #1f2227;
+  --sb-chip: #1c1f24;
+  --sb-accent: #2f81f7;
+  --sb-active: rgb(47 129 247 / 16%);
+  --sb-sheen: rgb(255 255 255 / 4%);
+  --sb-shadow: 0 24px 60px rgb(0 0 0 / 55%);
+  --sb-ring: rgb(47 129 247 / 55%);
+}
+
+/*
+ * Abierto = hover, foco por teclado (:focus-visible) o menú móvil abierto.
+ */
+@custom-variant sb-open {
+  :is(
+      [data-sidebar]:hover,
+      [data-sidebar]:has(:focus-visible),
+      [data-sidebar][data-mobile-open='true']
+    )
+    & {
+    @slot;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-sidebar],
+  [data-sidebar] * {
+    transition-duration: 0.01ms !important;
+    transition-delay: 0s !important;
+  }
+}

@@ -1,0 +1,7 @@
+@import 'tailwindcss';
+@import './components/sidebar/sidebar.css';
+
+@theme {
+  --font-sans: 'IBM Plex Sans Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
